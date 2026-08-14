@@ -1,0 +1,11 @@
+{
+  "$schema":"https://json-schema.org/draft/2020-12/schema",
+  "$id":"https://mwm.local/schemas/eqa/ledger.schema.json",
+  "title":"EQA Orchestration Ledger",
+  "type":"object",
+  "additionalProperties":false,
+  "required":["ledger_id","run_id","node_ids","completed_node_ids","deferred_node_ids","blocked_node_ids","stale_node_ids","finding_ids","disagreement_ids","decision_ids","receipt_ids","open_blocks","human_decisions_required","coverage_statement","residual_risk","release_decision","created_at"],
+  "properties":{
+    "ledger_id":{"type":"string","pattern":"^EQA-LEDGER-"},"run_id":{"type":"string"},"node_ids":{"type":"array","items":{"type":"string"}},"completed_node_ids":{"type":"array","items":{"type":"string"}},"deferred_node_ids":{"type":"array","items":{"type":"string"}},"blocked_node_ids":{"type":"array","items":{"type":"string"}},"stale_node_ids":{"type":"array","items":{"type":"string"}},"finding_ids":{"type":"array","items":{"type":"string"}},"disagreement_ids":{"type":"array","items":{"type":"string"}},"decision_ids":{"type":"array","items":{"type":"string"}},"receipt_ids":{"type":"array","items":{"type":"string"}},"open_blocks":{"type":"array","items":{"type":"string"}},"human_decisions_required":{"type":"array","items":{"type":"string"}},"coverage_statement":{"type":"string"},"residual_risk":{"type":"string","enum":["low","moderate","high","critical"]},"release_decision":{"type":"string","enum":["ready","ready_with_tracked_items","hold","blocked","post_publication_case"]},"created_at":{"type":"string","format":"date-time"},"supersedes":{"type":["string","null"]}
+  }
+}

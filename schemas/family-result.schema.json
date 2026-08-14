@@ -1,0 +1,11 @@
+{
+  "$schema":"https://json-schema.org/draft/2020-12/schema",
+  "$id":"https://mwm.local/schemas/eqa/family-result.schema.json",
+  "title":"EQA Family Skill Result",
+  "type":"object",
+  "additionalProperties":false,
+  "required":["family","skill_id","run_id","specification_version","rule_version","status","owner","coverage_statement","evidence_ids","finding_ids","release_effect","generated_at"],
+  "properties":{
+    "family":{"type":"string"},"skill_id":{"type":"string"},"run_id":{"type":"string"},"specification_version":{"type":"string"},"rule_version":{"type":"string"},"status":{"type":"string"},"owner":{"type":"string"},"coverage_statement":{"type":"object","additionalProperties":false,"required":["checked","unavailable","excluded","formats","does_not_establish"],"properties":{"checked":{"type":"array","items":{"type":"string"}},"unavailable":{"type":"array","items":{"type":"string"}},"excluded":{"type":"array","items":{"type":"string"}},"formats":{"type":"array","items":{"type":"string"}},"does_not_establish":{"type":"array","items":{"type":"string"}}}},"evidence_ids":{"type":"array","items":{"type":"string"}},"finding_ids":{"type":"array","items":{"type":"string"}},"release_effect":{"type":"string","enum":["none","track","hold","block"]},"generated_at":{"type":"string","format":"date-time"},"stale_against":{"type":["string","null"]}
+  }
+}

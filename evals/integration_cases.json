@@ -1,0 +1,11 @@
+{
+  "integration_set_id":"MWM-EQA-INTEGRATION-0.1",
+  "cases":[
+    {"case_id":"EQA-45","sequence":["create envelope","classify stage","resolve rules","build graph","run eligible RCI/SGI/TE/CE/SEI","pass CPR"],"assertions":["dependencies are satisfied","family boundaries remain intact","deferred work is explicit","residual risk is tracked"]},
+    {"case_id":"EQA-46","sequence":["change baseline","compare prior CPR","mark output stale","replan affected nodes","apply release gate"],"assertions":["stale output is not reused","new run is required","release remains blocked until rerun"]},
+    {"case_id":"EQA-47","sequence":["compare TE and PPR reports","cluster by issue key","retain partial disagreement","create decision packet","await owner"],"assertions":["both reports remain","material contradiction escalates","awaiting_human is not green"]},
+    {"case_id":"EQA-48","sequence":["record material decision","derive output","capture fixity","append provenance","create receipt"],"assertions":["receipt is complete","supersession is explicit","ready is permitted only with evidence"]},
+    {"case_id":"EQA-49","sequence":["identify released record","open post-publication case","preserve original","route authorized status workflow"],"assertions":["ordinary editing is not used","original fixity retained","status decision remains human-owned"]},
+    {"case_id":"EQA-50","sequence":["reconcile seven family statuses","check critical blocks","state format coverage","verify fixity/receipt","obtain release owner authorization"],"assertions":["release package is complete","critical override is clear","residual risk is stated","human authorization is retained"]}
+  ]
+}

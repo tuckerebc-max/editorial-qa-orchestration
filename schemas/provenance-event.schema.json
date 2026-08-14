@@ -1,0 +1,11 @@
+{
+  "$schema":"https://json-schema.org/draft/2020-12/schema",
+  "$id":"https://mwm.local/schemas/eqa/provenance-event.schema.json",
+  "title":"EQA Provenance Event",
+  "type":"object",
+  "additionalProperties":false,
+  "required":["event_id","event_type","entity_id","activity_id","agent_ids","input_ids","output_ids","authority_ids","evidence_ids","status_before","status_after","fixity","event_time","append_only"],
+  "properties":{
+    "event_id":{"type":"string","pattern":"^EQA-EVT-"},"event_type":{"type":"string","enum":["input_registered","node_started","node_completed","finding_recorded","comparison_recorded","decision_recorded","output_derived","status_changed","superseded","release_authorized","post_publication_opened"]},"entity_id":{"type":"string"},"activity_id":{"type":"string"},"agent_ids":{"type":"array","items":{"type":"string"}},"input_ids":{"type":"array","items":{"type":"string"}},"output_ids":{"type":"array","items":{"type":"string"}},"authority_ids":{"type":"array","items":{"type":"string"}},"evidence_ids":{"type":"array","items":{"type":"string"}},"status_before":{"type":["string","null"]},"status_after":{"type":"string"},"fixity":{"type":["string","null"]},"event_time":{"type":"string","format":"date-time"},"append_only":{"const":true},"supersedes":{"type":["string","null"]}
+  }
+}

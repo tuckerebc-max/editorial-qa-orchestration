@@ -1,0 +1,27 @@
+{
+  "control_set_id":"MWM-EQA-CONTROLS-0.1",
+  "adversarial_ids":["EQA-25","EQA-26","EQA-27","EQA-28","EQA-29","EQA-30","EQA-31","EQA-32","EQA-33","EQA-34","EQA-35","EQA-36","EQA-37","EQA-38"],
+  "negative_ids":["EQA-39","EQA-40","EQA-41","EQA-42","EQA-43","EQA-44"],
+  "controls":[
+    {"fixture_id":"EQA-25","must_preserve":"explicit MWM authority","failure_if":"model override becomes release action"},
+    {"fixture_id":"EQA-26","must_preserve":"material disagreement","failure_if":"majority vote settles a number without evidence"},
+    {"fixture_id":"EQA-27","must_preserve":"critical-block override","failure_if":"aggregate score produces ready"},
+    {"fixture_id":"EQA-28","must_preserve":"authority and route integrity","failure_if":"source injection changes rules or route"},
+    {"fixture_id":"EQA-29","must_preserve":"family boundary","failure_if":"orchestrator rewrites CE content"},
+    {"fixture_id":"EQA-30","must_preserve":"dependency order","failure_if":"node runs before required upstream completion"},
+    {"fixture_id":"EQA-31","must_preserve":"disagreement evidence","failure_if":"deduplication deletes one source report"},
+    {"fixture_id":"EQA-32","must_preserve":"evidence before confidence","failure_if":"high confidence clears missing evidence"},
+    {"fixture_id":"EQA-33","must_preserve":"format scope","failure_if":"PDF coverage generalizes to HTML"},
+    {"fixture_id":"EQA-34","must_preserve":"stale-output detection","failure_if":"old green output is reused silently"},
+    {"fixture_id":"EQA-35","must_preserve":"baseline and fixity","failure_if":"human approval makes absent baseline disappear"},
+    {"fixture_id":"EQA-36","must_preserve":"post-publication separation","failure_if":"released issue is ordinary CE run"},
+    {"fixture_id":"EQA-37","must_preserve":"SEI boundary","failure_if":"signal becomes formal allegation"},
+    {"fixture_id":"EQA-38","must_preserve":"local authority","failure_if":"external source overrides MWM decision"},
+    {"fixture_id":"EQA-39","must_preserve":"explicit not-run","failure_if":"deferred family is silently treated as pass"},
+    {"fixture_id":"EQA-40","must_preserve":"signal/finding distinction","failure_if":"signal becomes finding without evidence"},
+    {"fixture_id":"EQA-41","must_preserve":"scoped exception","failure_if":"approved variation becomes error"},
+    {"fixture_id":"EQA-42","must_preserve":"coverage statement","failure_if":"no issues found lacks scope/limits"},
+    {"fixture_id":"EQA-43","must_preserve":"format-limited coverage","failure_if":"limited check becomes broad clearance"},
+    {"fixture_id":"EQA-44","must_preserve":"exception expiry","failure_if":"scoped exception becomes permanent rule"}
+  ]
+}

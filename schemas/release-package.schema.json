@@ -1,0 +1,11 @@
+{
+  "$schema":"https://json-schema.org/draft/2020-12/schema",
+  "$id":"https://mwm.local/schemas/eqa/release-package.schema.json",
+  "title":"EQA Release Package",
+  "type":"object",
+  "additionalProperties":false,
+  "required":["package_id","run_id","approved_output_artifact_ids","family_statuses","release_checklist","open_item_disposition","provenance_receipt_id","fixity_values","version_status_record","accessibility_coverage","release_decision","release_owner","residual_risk"],
+  "properties":{
+    "package_id":{"type":"string","pattern":"^EQA-PKG-"},"run_id":{"type":"string"},"approved_output_artifact_ids":{"type":"array","items":{"type":"string"}},"family_statuses":{"type":"array","items":{"type":"object","required":["family","status","release_effect"],"properties":{"family":{"type":"string"},"status":{"type":"string"},"release_effect":{"type":"string","enum":["none","track","hold","block"]}}}},"release_checklist":{"type":"array","items":{"type":"object","required":["item","status","evidence"],"properties":{"item":{"type":"string"},"status":{"type":"string","enum":["pass","track","hold","block","not_applicable"]},"evidence":{"type":"string"}}}},"open_item_disposition":{"type":"string"},"provenance_receipt_id":{"type":"string"},"fixity_values":{"type":"array","items":{"type":"string"}},"version_status_record":{"type":"string"},"accessibility_coverage":{"type":"object","required":["formats","targets","scope","limitations"],"properties":{"formats":{"type":"array","items":{"type":"string"}},"targets":{"type":"array","items":{"type":"string"}},"scope":{"type":"string"},"limitations":{"type":"array","items":{"type":"string"}}}},"release_decision":{"type":"string","enum":["ready","ready_with_tracked_items","hold","blocked","post_publication_case"]},"release_owner":{"type":"string"},"residual_risk":{"type":"string","enum":["low","moderate","high","critical"]}
+  }
+}

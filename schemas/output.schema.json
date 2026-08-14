@@ -1,0 +1,11 @@
+{
+  "$schema":"https://json-schema.org/draft/2020-12/schema",
+  "$id":"https://mwm.local/schemas/eqa/output.schema.json",
+  "title":"EQA Run Result",
+  "type":"object",
+  "additionalProperties":false,
+  "required":["specification_id","run_id","stage","status","skills_run","skills_deferred","preconditions","findings","open_blocks","disagreements","human_decisions_required","coverage_statement","residual_risk","next_actions","receipt_id","ledger"],
+  "properties":{
+    "specification_id":{"const":"MWM-EQA-SPEC"},"run_id":{"type":"string"},"stage":{"type":"string"},"status":{"type":"string"},"skills_run":{"type":"array","items":{"type":"string"}},"skills_deferred":{"type":"array","items":{"type":"string"}},"preconditions":{"type":"array","items":{"type":"object","required":["id","status","evidence"],"properties":{"id":{"type":"string"},"status":{"type":"string","enum":["pass","fail","unknown","deferred"]},"evidence":{"type":"string"}}}},"findings":{"type":"array","items":{"$ref":"https://mwm.local/schemas/eqa/finding.schema.json"}},"open_blocks":{"type":"array","items":{"type":"string"}},"disagreements":{"type":"array","items":{"$ref":"https://mwm.local/schemas/eqa/comparison.schema.json"}},"human_decisions_required":{"type":"array","items":{"type":"string"}},"coverage_statement":{"type":"string"},"residual_risk":{"type":"string","enum":["low","moderate","high","critical"]},"next_actions":{"type":"array","items":{"type":"string"}},"receipt_id":{"type":["string","null"]},"ledger":{"$ref":"https://mwm.local/schemas/eqa/ledger.schema.json"},"generated_at":{"type":"string","format":"date-time"}
+  }
+}

@@ -1,0 +1,7 @@
+interface:
+  display_name: "Editorial QA & Orchestration"
+  short_description: "Dependency-aware editorial control layer"
+  default_prompt: "Use $editorial-qa-orchestration to route bounded editorial skills, preserve evidence, resolve gates, and produce auditable release decisions."
+
+policy:
+  allow_implicit_invocation: true

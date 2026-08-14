@@ -1,0 +1,17 @@
+{
+  "$schema":"https://json-schema.org/draft/2020-12/schema",
+  "$id":"https://mwm.local/schemas/eqa/fixture-contract.schema.json",
+  "title":"EQA Evaluation Fixture Contract",
+  "type":"object",
+  "additionalProperties":false,
+  "required":["fixture_id","kind","title","synthetic","input","gold"],
+  "properties":{
+    "fixture_id":{"type":"string","pattern":"^EQA-[0-9]{2}$"},
+    "kind":{"type":"string","enum":["clean","single_error","adversarial","negative_control","integration"]},
+    "title":{"type":"string"},
+    "named_case":{"type":["string","null"]},
+    "synthetic":{"const":true},
+    "input":{"type":"object"},
+    "gold":{"type":"object","additionalProperties":false,"required":["expected_status","expected_rule_ids","expected_interventions","must_not_emit_rule_ids"],"properties":{"expected_status":{"type":"string"},"expected_rule_ids":{"type":"array","items":{"type":"string","pattern":"^EQA-"}},"expected_interventions":{"type":"array","items":{"type":"string","enum":["AUTO_RECORD","PLAN","RUN","ROUTE","COMPARE","TRACK","ESCALATE","HOLD","BLOCK","RECEIPT","RELEASE"]}},"expected_states":{"type":"array","items":{"type":"string"}},"expected_hooks":{"type":"array","items":{"type":"string","pattern":"^EQA-DH-"}},"expected_routes":{"type":"array","items":{"type":"string"}},"must_not_emit_rule_ids":{"type":"array","items":{"type":"string","pattern":"^EQA-"}},"zero_tolerance":{"type":"array","items":{"type":"string"}}}}
+  }
+}

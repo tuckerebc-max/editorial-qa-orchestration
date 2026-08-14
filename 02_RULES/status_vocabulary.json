@@ -1,0 +1,9 @@
+{
+  "registry_id":"MWM-EQA-STATUS",
+  "version":"0.1.0",
+  "run_states":["intake","planned","running","awaiting_human","awaiting_input","awaiting_reproof","ready_with_tracked_items","hold","released","post_publication_case","blocked"],
+  "finding_states":["signal","finding","approved_variation","typesetter_error","factual_or_meaning_error","author_alteration","query_open","source_unavailable","asset_issue","accessibility_signal","status_issue","proposed_change","resolved","rejected","deferred","blocked"],
+  "release_decisions":["ready","ready_with_tracked_items","hold","blocked","post_publication_case"],
+  "confidence":["high","moderate","low","unknown"],
+  "promotion_rules":["awaiting states are not green","signal is not finding","approved variation is not error","critical block overrides aggregate score","release requires human owner and receipt","post_publication_case is separate from pre-publication editing"]
+}

@@ -1,0 +1,11 @@
+{
+  "$schema":"https://json-schema.org/draft/2020-12/schema",
+  "$id":"https://mwm.local/schemas/eqa/decision-receipt.schema.json",
+  "title":"EQA Decision Receipt",
+  "type":"object",
+  "additionalProperties":false,
+  "required":["receipt_id","entity_ids","activity_id","agent_ids","input_artifact_ids","rule_set_id","specification_version","model_tool_route","evidence_ids","decision","decision_owner","timestamp","output_artifact_ids","fixity_values","residual_risk","retention_class","supersedes","superseded_by"],
+  "properties":{
+    "receipt_id":{"type":"string","pattern":"^EQA-REC-"},"entity_ids":{"type":"array","items":{"type":"string"}},"activity_id":{"type":"string"},"agent_ids":{"type":"array","items":{"type":"string"}},"input_artifact_ids":{"type":"array","items":{"type":"string"}},"rule_set_id":{"type":"string"},"specification_version":{"type":"string"},"model_tool_route":{"type":"string"},"evidence_ids":{"type":"array","items":{"type":"string"}},"decision":{"type":"string"},"decision_owner":{"type":"string"},"timestamp":{"type":"string","format":"date-time"},"output_artifact_ids":{"type":"array","items":{"type":"string"}},"fixity_values":{"type":"array","items":{"type":"string"}},"residual_risk":{"type":"string","enum":["low","moderate","high","critical"]},"retention_class":{"type":"string"},"supersedes":{"type":["string","null"]},"superseded_by":{"type":["string","null"]},"owner_response":{"type":["string","null"]}
+  }
+}

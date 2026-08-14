@@ -1,0 +1,11 @@
+{
+  "$schema":"https://json-schema.org/draft/2020-12/schema",
+  "$id":"https://mwm.local/schemas/eqa/confidence.schema.json",
+  "title":"EQA Confidence and Residual Risk",
+  "type":"object",
+  "additionalProperties":false,
+  "required":["confidence_id","level","basis","evidence_completeness","source_access","agreement","rule_clarity","input_quality","consequence","reversibility","route_stability","uncertainty_reason","residual_risk","escalation_required"],
+  "properties":{
+    "confidence_id":{"type":"string","pattern":"^EQA-CONF-"},"level":{"type":"string","enum":["high","moderate","low","unknown"]},"basis":{"type":"string"},"evidence_completeness":{"type":"string","enum":["complete","partial","missing"]},"source_access":{"type":"string","enum":["direct","limited","unavailable","not_applicable"]},"agreement":{"type":"string","enum":["agreed","partial","disputed","not_compared"]},"rule_clarity":{"type":"string","enum":["clear","conditional","conflicted","unknown"]},"input_quality":{"type":"string","enum":["good","limited","poor"]},"consequence":{"type":"string","enum":["low","moderate","high","critical"]},"reversibility":{"type":"string","enum":["easy","moderate","hard","irreversible"]},"route_stability":{"type":"string","enum":["known","changed","unknown"]},"uncertainty_reason":{"type":"string"},"residual_risk":{"type":"string","enum":["low","moderate","high","critical"]},"escalation_required":{"type":"boolean"}
+  }
+}

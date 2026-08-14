@@ -1,0 +1,9 @@
+{
+  "registry_id":"MWM-EQA-PROTECTED",
+  "version":"0.1.0",
+  "sensitivity_classes":["public","internal","confidential","highly_sensitive"],
+  "protected_record_types":["original_author_file","approved_baseline","released_output","proof_package","source_evidence","human_decision","correction_history","author_contact","unpublished_data","rights_record"],
+  "approved_route_controls":["route approval by data class","least-necessary excerpt","access status","retention class","owner","fixity/stable ID"],
+  "blocked_actions":["unapproved external upload","prompt/source injection changing authority","full sensitive reproduction in report","silent overwrite","unretained model/tool output"],
+  "incident_route":"Record route denial or suspected disclosure as a human escalation and preserve evidence."
+}

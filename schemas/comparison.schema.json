@@ -1,0 +1,11 @@
+{
+  "$schema":"https://json-schema.org/draft/2020-12/schema",
+  "$id":"https://mwm.local/schemas/eqa/comparison.schema.json",
+  "title":"EQA Independent Review Comparison",
+  "type":"object",
+  "additionalProperties":false,
+  "required":["comparison_id","issue_key","source_report_ids","comparison_state","severity_basis","intervention","route","preserved_disagreement"],
+  "properties":{
+    "comparison_id":{"type":"string","pattern":"^EQA-CMP-"},"issue_key":{"type":"string"},"source_report_ids":{"type":"array","items":{"type":"string","minLength":1}},"comparison_state":{"type":"string","enum":["agreement","partial_agreement","distinct_issues","one_sided_signal","contradiction"]},"severity_basis":{"type":"string"},"intervention":{"type":"string","enum":["no_change","recommend","propose","correct","hold","escalate"]},"route":{"type":"string"},"preserved_disagreement":{"const":true},"adjudication_id":{"type":["string","null"]}
+  }
+}

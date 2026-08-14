@@ -1,0 +1,11 @@
+{
+  "$schema":"https://json-schema.org/draft/2020-12/schema",
+  "$id":"https://mwm.local/schemas/eqa/production-failure.schema.json",
+  "title":"EQA Production Failure Capture",
+  "type":"object",
+  "additionalProperties":false,
+  "required":["failure_id","detected_at","detected_by","run_id","chapter_id","stage","failure_class","severity","observed_fact","impact","containment","owner","related_rule_ids","related_fixture_ids","root_cause_status","corrective_action","retest_plan","status"],
+  "properties":{
+    "failure_id":{"type":"string","pattern":"^EQA-FAIL-"},"detected_at":{"type":"string","format":"date-time"},"detected_by":{"type":"string"},"run_id":{"type":"string"},"chapter_id":{"type":"string"},"stage":{"type":"string"},"failure_class":{"type":"string","enum":["false_clearance","authority_override","missing_precondition","stale_dependency","unsafe_route","family_boundary","disagreement_loss","unsupported_confidence","critical_masking","receipt_gap","provenance_gap","accessibility_scope","post_publication_bypass","privacy_route","release_authority","other"]},"severity":{"type":"string","enum":["low","moderate","high","critical"]},"observed_fact":{"type":"string"},"impact":{"type":"string"},"containment":{"type":"string"},"owner":{"type":"string"},"related_rule_ids":{"type":"array","items":{"type":"string"}},"related_fixture_ids":{"type":"array","items":{"type":"string"}},"root_cause_status":{"type":"string","enum":["unknown","hypothesis","confirmed"]},"corrective_action":{"type":"string"},"retest_plan":{"type":"string"},"status":{"type":"string","enum":["open","contained","correcting","retesting","closed"]},"closed_at":{"type":["string","null"],"format":"date-time"}
+  }
+}

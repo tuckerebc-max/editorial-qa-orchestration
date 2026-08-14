@@ -1,0 +1,11 @@
+{
+  "$schema":"https://json-schema.org/draft/2020-12/schema",
+  "$id":"https://mwm.local/schemas/eqa/route-decision.schema.json",
+  "title":"EQA Model and Tool Route Decision",
+  "type":"object",
+  "additionalProperties":false,
+  "required":["route_decision_id","task_type","risk_level","data_class","route_class","route_id","capability_scope","version","confidentiality_status","evidence_retention","human_checkpoint","status","rationale"],
+  "properties":{
+    "route_decision_id":{"type":"string","pattern":"^EQA-ROUTE-"},"task_type":{"type":"string"},"risk_level":{"type":"string","enum":["low","moderate","high","critical"]},"data_class":{"type":"string"},"route_class":{"type":"string","enum":["deterministic","specialist_model","independent_review","retrieval_verification","human"]},"route_id":{"type":"string"},"capability_scope":{"type":"string"},"version":{"type":"string"},"confidentiality_status":{"type":"string","enum":["approved","pending","denied"]},"evidence_retention":{"type":"string"},"human_checkpoint":{"type":"string","enum":["none","sample","mandatory"]},"status":{"type":"string","enum":["approved","deferred","refused","awaiting_human"]},"rationale":{"type":"string"},"denial_reason":{"type":["string","null"]}
+  }
+}

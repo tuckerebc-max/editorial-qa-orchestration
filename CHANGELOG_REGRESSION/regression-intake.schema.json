@@ -1,0 +1,11 @@
+{
+  "$schema":"https://json-schema.org/draft/2020-12/schema",
+  "$id":"https://mwm.local/schemas/eqa/regression-intake.schema.json",
+  "title":"EQA Regression Intake",
+  "type":"object",
+  "additionalProperties":false,
+  "required":["regression_id","reported_at","reported_by","source","summary","change_type","affected_rule_ids","fixture_ids","expected_behavior","observed_behavior","severity","status","owner","retest_required"],
+  "properties":{
+    "regression_id":{"type":"string","pattern":"^EQA-REG-"},"reported_at":{"type":"string","format":"date-time"},"reported_by":{"type":"string"},"source":{"type":"string","enum":["evaluation","production","human_qa","appeal","family_interface","specification_change","route_change","profile_change"]},"summary":{"type":"string"},"change_type":{"type":"string"},"affected_rule_ids":{"type":"array","items":{"type":"string","pattern":"^EQA-"}},"fixture_ids":{"type":"array","items":{"type":"string"}},"expected_behavior":{"type":"string"},"observed_behavior":{"type":"string"},"severity":{"type":"string","enum":["low","moderate","high","critical"]},"status":{"type":"string","enum":["new","triaged","accepted","rejected","fixed","verified","closed"]},"owner":{"type":"string"},"retest_required":{"type":"boolean"},"retest_result":{"type":["string","null"]},"closed_at":{"type":["string","null"],"format":"date-time"}
+  }
+}
